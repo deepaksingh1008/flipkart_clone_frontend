@@ -51,7 +51,7 @@ export const loginUser = (email, password) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      "/api/v1/login",
+      "https://flipkart-clone-backend-amber.vercel.app/api/v1/login",
       { email, password },
       config
     );
@@ -300,7 +300,7 @@ export const updateUser = (id, userData) => async (dispatch) => {
     };
 
     const { data } = await axios.put(
-      `/api/v1/admin/user/${id}`,
+      `https://flipkart-clone-backend-amber.vercel.app/api/v1/admin/user/${id}`,
       userData,
       config
     );

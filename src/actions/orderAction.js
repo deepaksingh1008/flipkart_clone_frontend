@@ -150,7 +150,7 @@ export const updateOrder = (id, order) => async (dispatch) => {
     };
 
     const { data } = await axios.put(
-      `/api/v1/admin/order/${id}`,
+      `https://flipkart-clone-backend-amber.vercel.app/api/v1/admin/order/${id}`,
       order,
       config
     );

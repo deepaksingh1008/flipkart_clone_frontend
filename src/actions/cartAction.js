@@ -10,7 +10,9 @@ import {
 export const addItemsToCart =
   (id, quantity = 1) =>
   async (dispatch, getState) => {
-    const { data } = await axios.get(`/api/v1/product/${id}`);
+    const { data } = await axios.get(
+      `https://flipkart-clone-backend-amber.vercel.app/api/v1/product/${id}`
+    );
 
     dispatch({
       type: ADD_TO_CART,

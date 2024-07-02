@@ -36,7 +36,11 @@ export const newOrder = (order) => async (dispatch) => {
       },
     };
 
-    const { data } = await axios.post("/api/v1/order/new", order, config);
+    const { data } = await axios.post(
+      "https://flipkart-clone-backend-amber.vercel.app/api/v1/order/new",
+      order,
+      config
+    );
 
     dispatch({
       type: NEW_ORDER_SUCCESS,
@@ -55,7 +59,9 @@ export const myOrders = () => async (dispatch) => {
   try {
     dispatch({ type: MY_ORDERS_REQUEST });
 
-    const { data } = await axios.get("/api/v1/orders/me");
+    const { data } = await axios.get(
+      "https://flipkart-clone-backend-amber.vercel.app/api/v1/orders/me"
+    );
 
     dispatch({
       type: MY_ORDERS_SUCCESS,
@@ -74,7 +80,9 @@ export const getOrderDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: ORDER_DETAILS_REQUEST });
 
-    const { data } = await axios.get(`/api/v1/order/${id}`);
+    const { data } = await axios.get(
+      `https://flipkart-clone-backend-amber.vercel.app/api/v1/order/${id}`
+    );
 
     dispatch({
       type: ORDER_DETAILS_SUCCESS,
@@ -93,7 +101,9 @@ export const getPaymentStatus = (id) => async (dispatch) => {
   try {
     dispatch({ type: PAYMENT_STATUS_REQUEST });
 
-    const { data } = await axios.get(`/api/v1/payment/status/${id}`);
+    const { data } = await axios.get(
+      `https://flipkart-clone-backend-amber.vercel.app/api/v1/payment/status/${id}`
+    );
 
     dispatch({
       type: PAYMENT_STATUS_SUCCESS,
@@ -112,7 +122,9 @@ export const getAllOrders = () => async (dispatch) => {
   try {
     dispatch({ type: ALL_ORDERS_REQUEST });
 
-    const { data } = await axios.get("/api/v1/admin/orders");
+    const { data } = await axios.get(
+      "https://flipkart-clone-backend-amber.vercel.app/api/v1/admin/orders"
+    );
 
     dispatch({
       type: ALL_ORDERS_SUCCESS,
@@ -160,7 +172,9 @@ export const deleteOrder = (id) => async (dispatch) => {
   try {
     dispatch({ type: DELETE_ORDER_REQUEST });
 
-    const { data } = await axios.delete(`/api/v1/admin/order/${id}`);
+    const { data } = await axios.delete(
+      `https://flipkart-clone-backend-amber.vercel.app/api/v1/admin/order/${id}`
+    );
 
     dispatch({
       type: DELETE_ORDER_SUCCESS,
